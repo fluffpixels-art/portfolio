@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Amna Qayyum, UI/UX Designer & Developer. Case studies: CareCloud, Al Marwan, CNTRLID.">
+<title>Amna Qayyum Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap">
+<style>
+/* Layout: the portfolio's own white sheets, stacked like a print proof on a soft neutral ground; single light theme by choice to match the PDF */
+:root {
+  --ground: #f2f3f5;
+  --sheet: #ffffff;
+  --ink: #181616;
+  --muted: #5f636b;
+  --rule: #dcdee2;
+  --sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 28px; }
+header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 32px; }
+h1 { margin: 0; font-weight: 400; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
+.role { margin: 6px 0 0; color: var(--muted); font-size: 16px; }
+.contact { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--rule); background: var(--sheet); border-radius: 999px;
+  padding: 7px 8px 7px 14px; font: inherit; color: var(--ink); }
+.chip span { user-select: all; }
+.chip button { font: 500 12px var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--muted);
+  background: var(--ground); border: 0; border-radius: 999px; padding: 4px 10px; cursor: pointer; }
+.chip button:hover { color: var(--ink); }
+.chip button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.sheets { display: grid; gap: 20px; }
+figure { margin: 0; background: var(--sheet); border: 1px solid var(--rule); box-shadow: 0 1px 2px rgba(24,22,22,.04), 0 8px 24px rgba(24,22,22,.05); }
+figure img { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 1440 / 1024; }
+footer { color: var(--muted); font-size: 13px; text-align: center; }
+a.dl { font: 500 14px var(--sans); color: var(--sheet); background: var(--ink); border-radius: 999px; padding: 9px 18px; text-decoration: none; }
+a.dl:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <main class="sheets">
+    <figure><img src="pages/p-1.jpg" alt="Introduction: UI/UX Designer and Developer, skills, education and contact" width="2880" height="2048"></figure>
+    <figure><img src="pages/p-2.jpg" alt="CareCloud case study: EHR interface modernization, problem statement and design approach" width="2880" height="2048" loading="lazy"></figure>
+    <figure><img src="pages/p-3.jpg" alt="CareCloud screens: encounter management and patient profile" width="2880" height="2048" loading="lazy"></figure>
+    <figure><img src="pages/p-4.jpg" alt="Al Marwan case study: bilingual website redesign, approach and visual system" width="2880" height="2048" loading="lazy"></figure>
+    <figure><img src="pages/p-5.jpg" alt="Al Marwan screens: homepage hero, bilingual navigation and mobile carousel" width="2880" height="2048" loading="lazy"></figure>
+    <figure><img src="pages/p-6.jpg" alt="CNTRLID case study: link management platform, visual system and mockups" width="2880" height="2048" loading="lazy"></figure>
+  </main>
+ 
+</div>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var v = b.dataset.copy, done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1600); };
+    try {
+      navigator.clipboard.writeText(v).then(done, function () { sel(b); });
+    } catch (e) { sel(b); }
+  });
+});
+function sel(b) { var r = document.createRange(); r.selectNodeContents(b.parentNode.querySelector("span")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+</script>
+</body>
+</html>
